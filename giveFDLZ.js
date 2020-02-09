@@ -50,7 +50,7 @@ function step2(){
 }
 function step3(){
 	$( "div:contains('Gabe Newell Interview')" ).parents().eq(3).css("display", "none");
-	console.log('done');
+	//console.log('done');
 }
 function getCookie(cname) {
 var name = cname + "=";
