@@ -1,4 +1,3 @@
-
 var xhttp2 = new XMLHttpRequest();
 var response;
 var SID;
@@ -42,11 +41,16 @@ function step2(){
 	xhttp.onreadystatechange=(e)=>{
 		if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200){
 			//console.log('done');
+			step3();
 		}
 		else{
 			//console.log('fail');
 		}
 	}
+}
+function step3(){
+	$( "div:contains('Gabe Newell Interview')" ).parents().eq(3).css("display", "none");
+	console.log('done');
 }
 function getCookie(cname) {
 var name = cname + "=";
