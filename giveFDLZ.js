@@ -35,6 +35,7 @@ function step2(){
 	
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
 	xhttp.setRequestHeader("Content-length", params.length);
+	xhttp.setRequestHeader("Host", "www.fundalize.com");
 	//xhttp.setRequestHeader("Cookie", cookies);
 	xhttp.send(params); 
 	
