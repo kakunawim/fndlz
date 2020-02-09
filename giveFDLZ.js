@@ -12,7 +12,7 @@ function giveFDLZ(){
 	xhttp.send(params); 
 	
 	xhttp.onreadystatechange=(e)=>{
-		xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200{
+		if (xhttp.readyState === XMLHttpRequest.DONE && xhttp.status === 200){
 			console.log('done');
 		}
 		else{
