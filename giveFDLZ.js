@@ -8,7 +8,7 @@ function giveFDLZ(){
 	
 	
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
-	xhttp.setRequestHeader("Cookie", cookies);
+	//xhttp.setRequestHeader("Cookie", cookies);
 	xhttp.send(params); 
 	
 	xhttp.onreadystatechange=(e)=>{
